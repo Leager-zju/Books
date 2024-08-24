@@ -2,7 +2,7 @@
 
 git add .
 
-commit_number=$(( $(git rev-list --count HEAD) + 1 ))
+commit_number=$(git rev-list --count HEAD)
 pdf_files=$(git diff --cached --name-only | grep .pdf | xargs -I % echo -e % | while read line; do echo $line; done)
 
 commit_message="[#$commit_number] Add Books:"
