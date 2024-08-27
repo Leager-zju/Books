@@ -10,8 +10,6 @@ for file in $pdf_files; do
   commit_message="$commit_message\n$file"
 done
 
-echo ${commit_message}
-
-git commit -m "$commit_message"
+git commit -m "$(echo -e ${commit_message})"
 
 git push
